@@ -1,11 +1,14 @@
 function split(wholeArray) {
     if (wholeArray.length < 2) {
-        return wholeArray
+        return [wholeArray, []]
     }
     
-    // split wholeArray into two halves
-    var firstHalf = wholeArray.splice(0, Math.ceil(wholeArray.length/2))
-    return [firstHalf, wholeArray];
+    // split
+    var n = Math.ceil(wholeArray.length/2),
+        firstHalf = wholeArray.slice(0, n),
+        secondHalf = wholeArray.slice(n);
+
+    return [firstHalf, secondHalf];
 }
 
 function merge(arr1, arr2) {
@@ -25,7 +28,16 @@ function merge(arr1, arr2) {
     
     // push the rest of whichever array has larger numbers to results
     if (i == arr1.length) results = results.concat(arr2.slice(j));
-    else results.concat(arr1.slice(i));
+    else results = results.concat(arr1.slice(i));
     
     return results;
 }
+
+function mergeSort(array) {
+    if (array.length <= 1) { return array; }
+    else{
+        var splitArr = split(array);
+        return merge( mergeSort(splitArr[0]), mergeSort(splitArr[1]) );
+    }
+}
+
