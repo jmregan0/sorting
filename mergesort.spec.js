@@ -24,7 +24,7 @@ describe('Split Array function', function() {
   
 });
 
-Expected [ 1, 2, 2, 3, 8, 9, 14, 22, 26, 33, 34, 54, 65, 67, 88, 99 ] to equal [ 1, 2, 3, 14, 26, 65, 67, 99 ].
+// Expected [ 1, 2, 2, 3, 8, 9, 14, 22, 26, 33, 34, 54, 65, 67, 88, 99 ] to equal [ 1, 2, 3, 14, 26, 65, 67, 99 ].
 
 describe('Merge', function(){
     beforeEach(function() {
